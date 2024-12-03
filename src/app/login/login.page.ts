@@ -38,6 +38,7 @@ export class LoginPage {
     } else {
       this.alertMessage = "Email ou mot de passe incorrect.";
     }
+    console.log(userMail + "-" + userPassword);
     this.isAlertOpen = true;
     this.router.navigate(['/todo'])
 
