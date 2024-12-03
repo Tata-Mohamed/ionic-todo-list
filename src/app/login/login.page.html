@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-container">
+      <ion-item>
+        <ion-input
+          formControlName="userMail"
+          type="email"
+          placeholder="Adresse email"
+        ></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="loginForm.get('userMail')?.invalid && loginForm.get('userMail')?.touched">
+        <p>Email invalide ou manquant</p>
+      </ion-text>
+
+      <ion-item>
+        <ion-input
+          formControlName="userPassword"
+          type="password"
+          placeholder="Mot de passe"
+        ></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="loginForm.get('userPassword')?.invalid && loginForm.get('userPassword')?.touched">
+        <p>Mot de passe trop court (4 caractères minimum).</p>
+      </ion-text>
+
+      <ion-button type="submit" expand="block" [disabled]="loginForm.invalid">
+        Connexion
+      </ion-button>
+
+      <ion-alert
+        [isOpen]="isAlertOpen"
+        [header]="alertMessage"
+        [buttons]="alertButtons"
+        (didDismiss)="isAlertOpen = false"
+      ></ion-alert>
+    </form>
+  </div>
+</ion-content>
