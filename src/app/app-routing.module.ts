@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'create-game',
+    loadChildren: () => import('./create-game/create-game.module').then( m => m.CreateGamePageModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -34,6 +38,10 @@ const routes: Routes = [
   {
     path: 'list-collection',
     loadChildren: () => import('./list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
+  },
+  {
+    path: 'create-game',
+    loadChildren: () => import('./create-game/create-game.module').then( m => m.CreateGamePageModule)
   },
 ];
 

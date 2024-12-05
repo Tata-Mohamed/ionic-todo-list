@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">Mon App</ion-button>
+      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
+      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="newGameName" label="Ajouter un nouveau jeu" placeholder="FC 25"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="newGameDescription" label="Ajouter une description au jeu"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="newGameGenre" label="Ajouter un genre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="newGamePlatform" label="Plate-forme" placeholder="Ajouter la plate-forme sur laquelle vous possédez le jeu"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="newGameReleaseYear" label="Ajouter une date de sortie"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cover du jeu</ion-label>
+      <input type="file" (change)="onImageChange($event)" />
+    </ion-item>    
+    <div class="btn-add">
+      <ion-button (click)="addCollection()">Ajouter</ion-button>
+    </div>
+  </ion-list>

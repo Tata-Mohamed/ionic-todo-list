@@ -3,7 +3,7 @@ export interface Game {
     title: string;        
     platform: string;     
     genre: string;       
-    releaseYear?: number; 
+    releaseYear?: Date; 
     coverImage?: string;  
     description?: string; 
     addedAt: Date;       
