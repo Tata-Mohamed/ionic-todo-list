@@ -1,8 +1,10 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">Mon App</ion-button>
+      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
+      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

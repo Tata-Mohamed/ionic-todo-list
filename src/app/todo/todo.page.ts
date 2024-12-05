@@ -9,7 +9,7 @@ import { Todo } from '../models/todo.model';
 export class TodoPage {
   todos: Todo[] = [];
   newTodo: string = '';
-  newDescription: string = ''
+  newDescription: string = '';
 
   addTodo() {
     if (this.newTodo.trim().length > 0) {

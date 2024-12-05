@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ListCollectionPage } from './list-collection/list-collection.page';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'home',
-  //   pathMatch: 'full'
-  // },
-  
+  {
+    path: 'list-collection',
+    component: ListCollectionPage
+  },
+  {
+    path: 'create_collection',
+    loadChildren: () => import('./create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
+  },
   {
     path: 'todo',
     loadChildren: () => import('./todo/todo.module').then( m => m.TodoPageModule)
@@ -23,6 +26,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'create-collection',
+    loadChildren: () => import('./create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
+  },
+  {
+    path: 'list-collection',
+    loadChildren: () => import('./list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
   },
 ];
 

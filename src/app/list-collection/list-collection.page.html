@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">Mon App</ion-button>
+      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
+      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="gallery">
+    <ion-item class="card-item" *ngFor="let collection of collections">
+      <div class="card">
+        <div class="card2">
+          <img *ngIf="collection.image" [src]="collection.image" alt="Collection Image" />
+          <ion-label class="align-center" id="title">{{ collection.name }}</ion-label>
+          <ion-label>{{ collection.description }}</ion-label>
+          <ion-label class="align-center" id="date">{{ collection.createdAt | date: 'dd-MM-yyyy' }}</ion-label>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
