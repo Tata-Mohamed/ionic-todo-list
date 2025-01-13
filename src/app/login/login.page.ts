@@ -40,7 +40,7 @@ export class LoginPage {
     }
     console.log(userMail + "-" + userPassword);
     this.isAlertOpen = true;
-    this.router.navigate(['/todo'])
+    this.router.navigate(['/home'])
 
   }
 }

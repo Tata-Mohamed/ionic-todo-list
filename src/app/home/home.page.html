@@ -5,19 +5,40 @@
       <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
       <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
       <ion-button [routerLink]="['/create-game']">Créer un jeu vidéo</ion-button>
+      <ion-button [routerLink]="['/list-games']">Liste jeux vidéos</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="widgets-container">
+    <!-- Widget principal -->
+    <div class="widget main-widget">
+      <h2>Collectionnez vos jeux, traversez les univers !</h2>
+    </div>
+    
+    <div class="container-last-widgets">
+      <h2>Mes collections</h2>
+      <p class="view-all">Voir tout</p>
+      <div class="row">
+        <div class="widget secondary-widget">
+          <h3>FPS & Action</h3>
+        </div>
+        <div class="widget secondary-widget">
+          <h3>RPG & Fantasy</h3>
+        </div>
+      </div>
+      <!-- Rangée 2 : 2 widgets -->
+      <h2>Mes jeux</h2>
+      <p class="view-all">Voir tout</p>
+      <div class="row">
+        <div class="widget secondary-widget" id="call_of_duty">
+          <h3>Call of Duty</h3>
+        </div>
+        <div class="widget secondary-widget" id="fortnite">
+          <h3>Fortnite</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
