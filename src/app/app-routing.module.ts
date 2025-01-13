@@ -40,9 +40,13 @@ const routes: Routes = [
     loadChildren: () => import('./list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
   },
   {
-    path: 'create-game',
-    loadChildren: () => import('./create-game/create-game.module').then( m => m.CreateGamePageModule)
+    path: 'list-games',
+    loadChildren: () => import('./list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
   },
+  {
+    path: 'list-games',
+    loadChildren: () => import('./list-games/list-games.module').then( m => m.ListGamesPageModule)
+  }
 ];
 
 @NgModule({
