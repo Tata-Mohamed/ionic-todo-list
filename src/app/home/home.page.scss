@@ -5,89 +5,117 @@
   height: 100%;
   width: 100%;
   gap: 16px;
-  padding: 10px;
   background-color: #1E193B;
 }
 
-.widget {
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.first-container {
+  width: 95%;
   text-align: center;
-}
-
-/* Widget principal : largeur totale */
-.main-widget {
+  padding: 20px;
+  font-size: 1rem;
   background-image: url("../../assets/img/cover-background-artist.gif");
-  width: 900px;
-  height: 100px;
 }
 
-/* Widgets secondaires */
-.secondary-widget {
-  width: 400px; /* Ajuste la largeur */
-  height: 150px;
-  display: flex;
-  justify-content: flex-start; /* Alignement horizontal (gauche) */
-  align-items: flex-end; /* Alignement vertical (bas) */
-  padding: 20px 10px 10px 20px;
-  position: relative; /* Nécessaire pour superposer le texte et l'effet */
-  background-image: url("https://i.kinja-img.com/image/upload/c_fit,q_60,w_645/7f2dd4eb6a9259677c3ff1225e1f208c.jpg");
-  background-size: cover; /* L'image remplit entièrement le widget */
-  background-position: center; /* L'image est centrée */
-  overflow: hidden;
+.container-global {
+  background-color: #312B4F;
+  border-top-left-radius: 25px 25px;
+  border-top-right-radius: 25px 25px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.192);
 }
 
-.secondary-widget::before {
-  content: ''; /* Pseudo-élément pour l'effet de noirceur */
+.second-container {
+  background-color: #454071;
+  border-radius: 25px;
+  width: 97%;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 5px;
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.192);
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+/* Style général pour le ion-card */
+#first-card {
+  position: relative; /* Permet de positionner la superposition */
+  background-image: url("https://media.gqmagazine.fr/photos/646b7d71a35e700534ed9802/16:9/w_1280,c_limit/100-best-games-hp-b.jpg");
+  background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+  background-position: center; /* Centre l'image */
+  border-radius: 8px;
+  overflow: hidden; /* Coupe tout débordement */
+}
+
+/* Superposition assombrie */
+#first-card::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Couche noire semi-transparente */
-  z-index: 1; /* Place l'effet sous le texte */
+  background-color: #352f53f0; /* Noircissement semi-transparent */
+  z-index: 1; /* Place la couche au-dessus de l'image mais sous le texte */
 }
 
-.secondary-widget h3 {
-  position: relative; /* Place le titre au-dessus de la couche noire */
-  z-index: 2; /* Assure que le texte est visible */
-  color: #ffffff; /* Couleur du texte pour le contraste */
-  font-size: 18px;
+/* Texte au-dessus de la superposition */
+.card-overlay {
+  position: relative; /* Assure que le texte reste au-dessus de la superposition */
+  z-index: 2; /* Place le contenu au-dessus de la superposition */
+  color: white; /* Texte blanc pour le contraste */
+  padding: 16px;
+  text-align: center; /* Centre le texte */
+}
+
+ion-card-title, ion-card-subtitle {
   margin: 0;
 }
 
-#call_of_duty {
-  background-image: url("https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/global/play-now-module/blackops6/PlayNowCard_Standard.webp");
-}
-
-#fortnite {
-  background-image: url("https://www.micromania.fr/on/demandware.static/-/Sites-Micromania-Library/default/dw31aac9de/fanzone/dossier/fortnite/Fortnite-skins.jpg");
-}
-
-/* Rangée pour aligner horizontalement */
-.row {
+.center-icons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  width: 100%; /* S'assure que l'espace est bien réparti */
+}
+
+ion-button {
+  --padding-start: 10px; /* Ajustez si les icônes sont trop rapprochées */
+  --padding-end: 10px;
+}
+.footer {
+  position: relative; /* Nécessaire pour l'effet avec ::before */
+  background: transparent; /* Fond transparent pour appliquer une couche via ::before */
+}
+
+.footer::before {
+  content: ''; /* Nécessaire pour afficher la couche */
+  position: absolute; /* Position relative au footer */
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 900px;
+  height: 100%;
+  background-color: #34315B; /* Couleur de fond */
+  opacity: 0.5; /* Opacité appliquée au fond */
+  z-index: 1; /* Place la couche sous les boutons */
+  pointer-events: none; /* Permet de cliquer sur les boutons */
 }
 
-.container-last-widgets {
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #312B4F;
+.center-icons {
+  position: relative; /* Place les icônes au-dessus de la couche */
+  z-index: 2; /* S'assure qu'elles ne sont pas affectées par l'opacité */
+  display: flex;
+  justify-content: space-between; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
   width: 100%;
-  max-width: 900px;
 }
 
-.container-last-widgets p {
-  color: #848096;
+.center-icons ion-icon {
+  color: white; /* Couleur blanche des icônes */
+  font-size: 24px; /* Ajuste la taille des icônes */
 }
 
-.view-all:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+

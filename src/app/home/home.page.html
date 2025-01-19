@@ -1,44 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button [routerLink]="['/']">Mon App</ion-button>
-      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
-      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
-      <ion-button [routerLink]="['/create-game']">Créer un jeu vidéo</ion-button>
-      <ion-button [routerLink]="['/list-games']">Liste jeux vidéos</ion-button>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-buttons class="center-icons">
+      <ion-button [routerLink]="['/']">
+        <ion-icon name="library-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/create-collection']">
+        <ion-icon name="game-controller-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/list-collection']">
+        <img style="width: 50px;" src="https://files.softicons.com/download/application-icons/hex-icons-pack-by-martz90/png/512x512/gamehub.png">
+      </ion-button>
+      <ion-button [routerLink]="['/create-game']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/list-games']">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-footer>
+
 
 <ion-content>
   <div class="widgets-container">
-    <!-- Widget principal -->
-    <div class="widget main-widget">
-      <h2>Collectionnez vos jeux, traversez les univers !</h2>
-    </div>
-    
-    <div class="container-last-widgets">
-      <h2>Mes collections</h2>
-      <p class="view-all">Voir tout</p>
-      <div class="row">
-        <div class="widget secondary-widget">
-          <h3>FPS & Action</h3>
-        </div>
-        <div class="widget secondary-widget">
-          <h3>RPG & Fantasy</h3>
-        </div>
-      </div>
-      <!-- Rangée 2 : 2 widgets -->
+    <ion-card class="first-container">
+        <ion-card-title>Bienvenue sur mon application</ion-card-title>
+    </ion-card>
+
+    <div class="container-global">
+      <div class="second-container">
+        <h2>Mes collections</h2>
+        <ion-card id="first-card" [routerLink]="['/list-collection']">
+          <div class="card-overlay">
+            <ion-card-header>
+              <ion-card-title>Collections</ion-card-title>
+              <ion-card-subtitle>Explorez des Univers</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              Plongez dans des mondes fascinants et variés.
+            </ion-card-content>
+          </div>
+        </ion-card>
+      
       <h2>Mes jeux</h2>
-      <p class="view-all">Voir tout</p>
-      <div class="row">
-        <div class="widget secondary-widget" id="call_of_duty">
-          <h3>Call of Duty</h3>
+      <ion-card id="first-card" [routerLink]="['/list-games']">
+        <div class="card-overlay">
+          <ion-card-header>
+            <ion-card-title>Jeux vidéos</ion-card-title>
+            <ion-card-subtitle>Explorez des jeux</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Découvrez des univers uniques et des aventures épiques.
+          </ion-card-content>
         </div>
-        <div class="widget secondary-widget" id="fortnite">
-          <h3>Fortnite</h3>
-        </div>
-      </div>
+      </ion-card>
+    </div>
     </div>
   </div>
 </ion-content>

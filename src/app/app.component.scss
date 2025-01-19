@@ -1,0 +1,8 @@
+:root {
+    --custom-footer-bg: #34315B;
+  }
+  
+  ion-footer {
+    background-color: var(--custom-footer-bg);
+    color: var(--ion-color-light); /* Texte blanc prédéfini dans Ionic */
+  }
