@@ -1,0 +1,140 @@
+.widgets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 16px;
+  background-color: #1E193B;
+}
+
+ion-card-title {
+  text-align: center;
+  padding: 20px;
+}
+
+p {
+  text-align: center;
+  color: #9e9abe;
+}
+
+.first-container {
+  width: 95%;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.container-global {
+  background-color: #312B4F;
+  border-top-left-radius: 25px 25px;
+  border-top-right-radius: 25px 25px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.192);
+}
+
+.second-container {
+  background-color: #454071;
+  border-radius: 25px;
+  width: 97%;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 5px;
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.192);
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+/* Style général pour le ion-card */
+.cards-style {
+  position: relative; /* Permet de positionner la superposition */
+  border-radius: 8px;
+  overflow: hidden; /* Coupe tout débordement */
+}
+
+/* Superposition assombrie */
+.cards-style::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #352f53b1; /* Noircissement semi-transparent */
+  z-index: 1; /* Place la couche au-dessus de l'image mais sous le texte */
+}
+
+#first-card {
+  background-image: url("https://i.gifer.com/3Vil.gif");
+  background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+  background-position: center; /* Centre l'image */
+}
+
+#second-card {
+  background-image: url("https://www.laboiteverte.fr/wp-content/uploads/2013/05/decors-jeu-combat-068.gif");
+  background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+  background-position: center; /* Centre l'image */
+}
+
+/* Texte au-dessus de la superposition */
+.card-overlay {
+  position: relative; /* Assure que le texte reste au-dessus de la superposition */
+  z-index: 2; /* Place le contenu au-dessus de la superposition */
+  color: white; /* Texte blanc pour le contraste */
+  padding: 16px;
+  text-align: center; /* Centre le texte */
+}
+
+ion-card-title, ion-card-subtitle {
+  color: white;
+  margin: 0;
+}
+
+.center-icons {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  width: 100%; /* S'assure que l'espace est bien réparti */
+}
+
+ion-button {
+  --padding-start: 10px; /* Ajustez si les icônes sont trop rapprochées */
+  --padding-end: 10px;
+}
+.footer {
+  position: relative; /* Nécessaire pour l'effet avec ::before */
+  background: transparent; /* Fond transparent pour appliquer une couche via ::before */
+}
+
+.footer::before {
+  content: ''; /* Nécessaire pour afficher la couche */
+  position: absolute; /* Position relative au footer */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #34315B; /* Couleur de fond */
+  opacity: 0.5; /* Opacité appliquée au fond */
+  z-index: 1; /* Place la couche sous les boutons */
+  pointer-events: none; /* Permet de cliquer sur les boutons */
+}
+
+.center-icons {
+  position: relative; /* Place les icônes au-dessus de la couche */
+  z-index: 2; /* S'assure qu'elles ne sont pas affectées par l'opacité */
+  display: flex;
+  justify-content: space-between; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  width: 100%;
+}
+
+.center-icons ion-icon {
+  color: white; /* Couleur blanche des icônes */
+  font-size: 24px; /* Ajuste la taille des icônes */
+}
+
+

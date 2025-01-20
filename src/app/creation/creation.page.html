@@ -1,13 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>creation</ion-title>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-buttons class="center-icons">
+      <ion-button [routerLink]="['/']">
+        <ion-icon name="library-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/create-collection']">
+        <ion-icon name="game-controller-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/list-collection']">
+        <img style="width: 50px;" src="https://files.softicons.com/download/application-icons/hex-icons-pack-by-martz90/png/512x512/gamehub.png">
+      </ion-button>
+      <ion-button [routerLink]="['/create-game']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/creation']">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-footer>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">creation</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content>
+  <div class="widgets-container">
+    <ion-card-title>Page de création</ion-card-title>
+
+    <div class="container-global">
+      <p>Page de création : permet de choisir entre créer une collection ou un jeu vidéo.</p>
+
+      <div class="second-container">
+        <h2>Créer une collection</h2>
+        <ion-card class="cards-style" id="first-card" [routerLink]="['/create-collection']">
+          <div class="card-overlay">
+            <ion-card-header>
+              <ion-card-title>Collections</ion-card-title>
+              <ion-card-subtitle>Créer un nouvel Univers</ion-card-subtitle>
+            </ion-card-header>
+          </div>
+        </ion-card>
+      
+      <h2>Créer un jeu vidéo</h2>
+      <ion-card class="cards-style" id="second-card" [routerLink]="['/create-game']">
+        <div class="card-overlay">
+          <ion-card-header>
+            <ion-card-title>Jeux vidéos</ion-card-title>
+            <ion-card-subtitle>Créer un nouveau jeu</ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </ion-card>
+    </div>
+    </div>
+  </div>
 </ion-content>
