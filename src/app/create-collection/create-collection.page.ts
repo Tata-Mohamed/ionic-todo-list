@@ -32,6 +32,7 @@ export class CreateCollectionPage {
   newGamePlatform: string = '';
   newGameReleaseYear: Date = new Date();
   newGameAddedAt: Date = new Date();
+  newGameNbHeures?: number;
 
   constructor(private router: Router) {}
 
@@ -78,6 +79,7 @@ export class CreateCollectionPage {
           coverImage: this.newGameCoverImage ? URL.createObjectURL(this.newGameCoverImage) : undefined,
           description: this.newGameDescription,
           dateDeCreation: new Date(),
+          heuresDeJeu: this.newGameNbHeures || 0,
         };
   
         const existingGames = JSON.parse(localStorage.getItem('games') || '[]');
@@ -87,6 +89,7 @@ export class CreateCollectionPage {
         this.newGameName = '';
         this.newGameDescription = '';
         this.newGameCoverImage = null;
+        this.newGameNbHeures = 0;
   
         this.router.navigate(['/list-games']);
       }

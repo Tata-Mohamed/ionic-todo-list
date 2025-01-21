@@ -86,6 +86,22 @@
         </ion-input>
       </ion-item>
       <ion-item>
+        <ion-input
+          [(ngModel)]="newGameNbHeures"
+          type="number"
+          label="Heures de jeu"
+          labelPlacement="stacked"
+          placeholder="Entrez le nombre d'heures de jeu">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date de sortie</ion-label>
+        <ion-datetime 
+          [(ngModel)]="newGameReleaseYear" 
+          displayFormat="DD/MM/YYYY" 
+          placeholder="Sélectionnez la date de sortie"></ion-datetime>
+      </ion-item>
+      <ion-item>
         <ion-label position="stacked">Image du jeu</ion-label>
         <input type="file" (change)="onImageChange($event)" />
       </ion-item>

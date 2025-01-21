@@ -6,6 +6,7 @@ export interface Game {
     dateDeSortie?: Date; 
     coverImage?: string;  
     description?: string; 
-    dateDeCreation: Date;       
+    dateDeCreation: Date;
+    heuresDeJeu?: number;
   }
   
