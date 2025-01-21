@@ -1,12 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button [routerLink]="['/']">Mon App</ion-button>
-      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
-      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-buttons class="center-icons">
+      <ion-button [routerLink]="['/list-collection']">
+        <ion-icon name="library-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/list-games']">
+        <ion-icon name="game-controller-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/home']">
+        <img style="width: 50px;" src="https://files.softicons.com/download/application-icons/hex-icons-pack-by-martz90/png/512x512/gamehub.png">
+      </ion-button>
+      <ion-button [routerLink]="['/create-game']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/creation-collection']">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-footer>
 
 <ion-content>
   <ion-list class="gallery">

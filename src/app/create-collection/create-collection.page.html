@@ -1,26 +1,100 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button [routerLink]="['/']">Mon App</ion-button>
-      <ion-button [routerLink]="['/create-collection']">Créer une collection</ion-button>
-      <ion-button [routerLink]="['/list-collection']">Liste des collections</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <div class="ion-toolbar">
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="selectedForm" value="collection">
+        <ion-segment-button value="collection">
+          <ion-label>Créer une collection</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="game">
+          <ion-label>Créer un jeu</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </div>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-input [(ngModel)]="newCollectionName" label="Ajouter une nouvelle collection" placeholder="Horreur et Suspense"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input [(ngModel)]="newCollectionDescription" label="Ajouter une description" placeholder="Plongez dans une atmosphère sombre et oppressante"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Image de la collection</ion-label>
-      <input type="file" (change)="onImageChange($event)" />
-    </ion-item>    
+  <!-- Formulaire de collection -->
+  <div class="container-global" *ngIf="selectedForm === 'collection'">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          [(ngModel)]="newCollectionName"
+          label="Nom de la collection"
+          labelPlacement="stacked"
+          [clearInput]="true"
+          placeholder="Entrez le nom de la collection">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          [(ngModel)]="newCollectionDescription"
+          label="Description"
+          labelPlacement="stacked"
+          [clearInput]="true"
+          placeholder="Entrez une description">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Image de la collection</ion-label>
+        <input type="file" (change)="onImageChange($event)" />
+      </ion-item>
+    </ion-list>
     <div class="btn-add">
-      <ion-button (click)="addCollection()">Ajouter</ion-button>
+      <ion-button (click)="addCollection()">Ajouter la collection</ion-button>
     </div>
-  </ion-list>
+  </div>
+
+  <!-- Formulaire de jeu vidéo -->
+  <div *ngIf="selectedForm === 'game'">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          [(ngModel)]="newGameName"
+          label="Nom du jeu"
+          labelPlacement="stacked"
+          [clearInput]="true"
+          placeholder="Entrez le nom du jeu">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          [(ngModel)]="newGameDescription"
+          label="Description"
+          labelPlacement="stacked"
+          [clearInput]="true"
+          placeholder="Entrez une description">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Image du jeu</ion-label>
+        <input type="file" (change)="onImageChange($event)" />
+      </ion-item>
+    </ion-list>
+    <div class="btn-add">
+      <ion-button (click)="addGame()">Ajouter le jeu</ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-buttons class="center-icons">
+      <ion-button [routerLink]="['/list-collection']">
+        <ion-icon name="library-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/list-games']">
+        <ion-icon name="game-controller-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/home']">
+        <img style="width: 50px;" src="https://files.softicons.com/download/application-icons/hex-icons-pack-by-martz90/png/512x512/gamehub.png">
+      </ion-button>
+      <ion-button [routerLink]="['/create-game']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/creation-collection']">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
