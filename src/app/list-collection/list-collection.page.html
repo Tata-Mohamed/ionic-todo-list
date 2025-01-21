@@ -13,24 +13,28 @@
       <ion-button [routerLink]="['/create-game']">
         <ion-icon name="stats-chart-outline"></ion-icon>
       </ion-button>
-      <ion-button [routerLink]="['/creation-collection']">
+      <ion-button [routerLink]="['/create-collection']">
         <ion-icon name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
 
-<ion-content>
-  <ion-list class="gallery">
-    <ion-item class="card-item" *ngFor="let collection of collections">
-      <div class="card">
-        <div class="card2">
-          <img *ngIf="collection.image" [src]="collection.image" alt="Collection Image" />
-          <ion-label class="align-center" id="title">{{ collection.name }}</ion-label>
-          <ion-label>{{ collection.description }}</ion-label>
-          <ion-label class="align-center" id="date">{{ collection.createdAt | date: 'dd-MM-yyyy' }}</ion-label>
-        </div>
-      </div>
-    </ion-item>
+
+<ion-content color="red" class="custom-page-background">
+  <ion-list style="background-color: transparent;">
+    <ion-card class="card-item" 
+    *ngFor="let collection of collections"
+    [ngStyle]="{'background-image': collection.image ? 'url(' + collection.image + ')' : 'none', 'background-size': 'cover', 'background-position': 'center'}"
+    >
+      <ion-card-header>
+        <ion-card-title>{{ collection.name }}</ion-card-title>
+        <ion-card-subtitle>{{ collection.createdAt | date: 'dd-MM-yyyy' }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{ collection.description }}
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

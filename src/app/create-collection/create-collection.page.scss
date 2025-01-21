@@ -1,15 +1,48 @@
-.container-global {
-    background-color: #312B4F;
-    border-top-left-radius: 25px 25px;
-    border-top-right-radius: 25px 25px;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.192);
+.custom-page-background {
+  --background: #312B4F;
+  color: #ffffff; /* Texte blanc pour un bon contraste */
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
 }
 
-.ion-toolbar {
-    background-color: red;
+.form-container {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --background: transparent;
+  margin-bottom: 15px;
+}
+
+ion-input {
+  --background: #564F80; /* Une nuance légèrement différente pour les champs */
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+input[type="file"] {
+  color: #ffffff;
+  background-color: #564F80;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.style-button-valid {
+  background-color: #7469b3;
+  width: 200px;
+  height: 60px;
+  margin-top: 50px;
+  font-size: 20px;
+  border-radius: 15px;
 }
 
 ion-card-title, ion-card-subtitle {
