@@ -1,11 +1,11 @@
 export interface Game {
     id: string;           
-    title: string;        
-    platform: string;     
-    genre: string;       
-    releaseYear?: Date; 
+    nom: string;        
+    console: string;     
+    collection: string;       
+    dateDeSortie?: Date; 
     coverImage?: string;  
     description?: string; 
-    addedAt: Date;       
+    dateDeCreation: Date;       
   }
   

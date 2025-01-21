@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Collection } from '../models/create-collection.model';
+import { Collection } from '../models/collection.model';
 
 @Component({
   selector: 'app-list-collection',

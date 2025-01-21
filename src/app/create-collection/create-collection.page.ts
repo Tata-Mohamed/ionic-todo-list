@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Collection } from '../models/create-collection.model';
+import { Collection } from '../models/collection.model';
 import { Router } from '@angular/router';
 import { Game } from '../models/game.model';
 
@@ -9,6 +9,10 @@ import { Game } from '../models/game.model';
   styleUrls: ['./create-collection.page.scss'],
 })
 export class CreateCollectionPage {
+
+  ngOnInit() {
+    this.loadCollections();
+  }
 
   selectedForm: 'collection' | 'game' = 'collection';
 
@@ -67,24 +71,29 @@ export class CreateCollectionPage {
       if (this.newGameName.trim().length > 0) {
         const newGame: Game = {
           id: Date.now().toString(),
-          title: this.newGameName.trim(),
-          platform: this.newGamePlatform,
-          genre: this.newGameGenre,
-          releaseYear: new Date(),
+          nom: this.newGameName.trim(),
+          console: this.newGamePlatform,
+          collection: this.newGameGenre,
+          dateDeSortie: new Date(),
           coverImage: this.newGameCoverImage ? URL.createObjectURL(this.newGameCoverImage) : undefined,
           description: this.newGameDescription,
-          addedAt: new Date(),
+          dateDeCreation: new Date(),
         };
   
-        const existingCollections = JSON.parse(localStorage.getItem('collections') || '[]');
-        existingCollections.push(newGame);
-        localStorage.setItem('collections', JSON.stringify(existingCollections));
+        const existingGames = JSON.parse(localStorage.getItem('games') || '[]');
+        existingGames.push(newGame);
+        localStorage.setItem('games', JSON.stringify(existingGames));
   
         this.newGameName = '';
         this.newGameDescription = '';
         this.newGameCoverImage = null;
   
-        this.router.navigate(['/list-collection']);
+        this.router.navigate(['/list-games']);
       }
+    }
+
+    loadCollections() {
+      const existingCollections = JSON.parse(localStorage.getItem('collections') || '[]');
+      this.collections = existingCollections;
     }
 }
