@@ -15,6 +15,7 @@ import { CreateCollectionPage } from './create-collection.page';
     IonicModule,
     CreateCollectionPageRoutingModule
   ],
-  declarations: [CreateCollectionPage]
+  declarations: [CreateCollectionPage],
+  exports: [CreateCollectionPage]
 })
 export class CreateCollectionPageModule {}

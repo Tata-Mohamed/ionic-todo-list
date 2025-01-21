@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListGamesPageRoutingModule } from './list-games-routing.module';
+import { ListGamesPageRoutingModule } from './list-game-routing.module';
 
-import { ListGamesPage } from './list-games.page';
+import { ListGamesPage } from './list-game.page';
 
 @NgModule({
   imports: [

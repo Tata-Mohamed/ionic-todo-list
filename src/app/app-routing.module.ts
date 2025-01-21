@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ListCollectionPage } from './list-collection/list-collection.page';
+import { ListCollectionPage } from './components/collection/list-collection/list-collection.page';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'list-collection',
@@ -13,31 +13,31 @@ const routes: Routes = [
   },
   {
     path: 'create_collection',
-    loadChildren: () => import('./create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
-  },
-  {
-    path: 'todo',
-    loadChildren: () => import('./todo/todo.module').then( m => m.TodoPageModule)
+    loadChildren: () => import('./components/collection/create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./components/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./components/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'create-collection',
-    loadChildren: () => import('./create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
+    loadChildren: () => import('./components/collection/create-collection/create-collection.module').then( m => m.CreateCollectionPageModule)
   },
   {
     path: 'list-collection',
-    loadChildren: () => import('./list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
+    loadChildren: () => import('./components/collection/list-collection/list-collection.module').then( m => m.ListCollectionPageModule)
   },
   {
     path: 'list-games',
-    loadChildren: () => import('./list-games/list-games.module').then( m => m.ListGamesPageModule)
+    loadChildren: () => import('./components/game/list-game/list-game.module').then( m => m.ListGamesPageModule)
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./components/form/form.module').then( m => m.FormModule)
   }
 ];
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Collection } from '../models/collection.model';
+import { CollectionService } from 'src/app/services/collectionService/collection.service';
 
 @Component({
   selector: 'app-list-collection',
@@ -9,7 +10,7 @@ import { Collection } from '../models/collection.model';
 export class ListCollectionPage {
   collections: Collection[] = [];
 
-  constructor() {
-    this.collections = JSON.parse(localStorage.getItem('collections') || '[]');
+  constructor(private collectionService: CollectionService) {
+    this.collections = this.collectionService.getCollections();
   }
 }

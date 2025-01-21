@@ -1,4 +1,4 @@
-import { Game } from './game.model';
+import { Game } from '../../game/models/game.model';
 
 export interface Collection {
   id: string;

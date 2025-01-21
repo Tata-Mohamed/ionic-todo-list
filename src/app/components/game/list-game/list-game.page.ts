@@ -3,8 +3,8 @@ import { Game } from '../models/game.model';
 
 @Component({
   selector: 'app-list-games',
-  templateUrl: './list-games.page.html',
-  styleUrls: ['./list-games.page.scss'],
+  templateUrl: './list-game.page.html',
+  styleUrls: ['./list-game.page.scss'],
 })
 export class ListGamesPage {
 

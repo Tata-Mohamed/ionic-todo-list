@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TodoPageRoutingModule } from './todo-routing.module';
+import { CreateCollectionPageRoutingModule } from './create-game-routing.module';
 
-import { TodoPage } from './todo.page';
+import { CreateGamePage } from './create-game.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TodoPageRoutingModule
+    CreateCollectionPageRoutingModule
   ],
-  declarations: [TodoPage]
+  declarations: [CreateGamePage],
+  exports: [CreateGamePage]
 })
-export class TodoPageModule {}
+export class CreateGameModule {}
