@@ -1,5 +1,5 @@
 export interface Game {
-    id: string;           
+    id: number;           
     nom: string;        
     console: string;     
     collection: string;       

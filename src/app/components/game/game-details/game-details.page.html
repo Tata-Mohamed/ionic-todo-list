@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Game Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="game">
+    <img [src]="game.coverImage" alt="{{ game.nom }}" />
+    <ion-card-header>
+      <ion-card-title>{{ game.nom }}</ion-card-title>
+      <ion-card-subtitle>{{ game.dateDeCreation | date: 'dd-MM-yyyy' }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ game.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
