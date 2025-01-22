@@ -8,6 +8,7 @@ import { FormRoutingModule } from './form-routing.module';
 
 import { FormPage } from './form.page';
 import { CreateGameModule } from '../game/create-game/create-game.module';
+import { CreateCollectionPageModule } from "../collection/create-collection/create-collection.module";
 
 @NgModule({
   imports: [
@@ -15,8 +16,9 @@ import { CreateGameModule } from '../game/create-game/create-game.module';
     FormsModule,
     IonicModule,
     FormRoutingModule,
-    CreateGameModule
-  ],
+    CreateGameModule,
+    CreateCollectionPageModule
+],
   declarations: [FormPage]
 })
 export class FormModule {}

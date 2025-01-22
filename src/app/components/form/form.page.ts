@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class FormPage {
 
+  selectedForm: 'collection' | 'game' = 'collection';
+
   ngOnInit() {
   }
 

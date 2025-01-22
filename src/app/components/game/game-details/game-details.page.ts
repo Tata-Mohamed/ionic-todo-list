@@ -14,9 +14,10 @@ export class GameDetailsPage implements OnInit {
   constructor(private route: ActivatedRoute ,private gameService: GameService) { }
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.game = this.gameService.getGameById(id);
+      console.log(this.game);
     }
   }
 

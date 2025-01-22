@@ -17,10 +17,7 @@ export class ListGamesPage {
     this.games = this.gameService.getGames()
   }
 
-  goToDetails(id: number) {
+  goToDetails(id: string) {
     this.router.navigate(['/game-details', id]);
   }
-
-  
-
 }

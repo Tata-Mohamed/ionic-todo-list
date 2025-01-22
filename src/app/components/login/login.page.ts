@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/authService/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,39 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  correctMail: string = "test@test";
-  correctPassword: string = "test";
-
   loginForm: FormGroup;
-  isAlertOpen = false;
-  alertButtons = ['OK'];
-  alertMessage = '';
+  errorMessage: string = "";
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
-    this.loginForm = this.formBuilder.group({
-      userMail: ['', [Validators.required, Validators.email]],
-      userPassword: ['', [Validators.required, Validators.minLength(4)]],
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
-  login() {
-    if (this.loginForm.invalid) {
-      this.alertMessage = "Veuillez remplir tous les champs correctement.";
-      this.isAlertOpen = true;
-      return;
-    }
-
-    const userMail = this.loginForm.value.userMail;
-    const userPassword = this.loginForm.value.userPassword;
-
-    if (userMail === this.correctMail && userPassword === this.correctPassword) {
-      this.alertMessage = "Connexion réussie.";
-    } else {
-      this.alertMessage = "Email ou mot de passe incorrect.";
-    }
-    console.log(userMail + "-" + userPassword);
-    this.isAlertOpen = true;
-    this.router.navigate(['/home'])
-
+    onLogin() {
+      const { email, password } = this.loginForm.value;
+      if(this.authService.login(email, password)) {
+        this.router.navigate(['/home'])
+      } else {
+        this.errorMessage = "Adresse mail ou mot de passe incorrect";
+      }
   }
 }

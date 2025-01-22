@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'form',
     loadChildren: () => import('./components/form/form.module').then( m => m.FormModule)
+  },
+  {
+    path: 'game-details/:id',
+    loadChildren: () => import('./components/game/game-details/game-details.module').then( m => m.GameDetailsPageModule)
   }
 ];
 
