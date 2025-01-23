@@ -5,14 +5,40 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card *ngIf="game">
-    <img [src]="game.coverImage" alt="{{ game.nom }}" />
+  <div class="container-global" *ngIf="game">
+    <img class="image" [src]="game.coverImage" alt="{{ game.nom }}" />
     <ion-card-header>
       <ion-card-title>{{ game.nom }}</ion-card-title>
-      <ion-card-subtitle>{{ game.dateDeCreation | date: 'dd-MM-yyyy' }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <p>{{ game.description }}</p>
+      <h2 class="titles">Description du jeu</h2>
+      <p class="description">{{ game.description }}</p>
+      <h2 class="titles">Type de console</h2>
+      <div class="align-console-name" [ngSwitch]="game.console">
+        <div class="console-item" *ngSwitchCase="'PlayStation'">
+          <img src="https://img.icons8.com/ios11/512/FFFFFF/play-station.png" alt="PlayStation" class="console-logo">
+          <span class="console-name">PlayStation</span>
+        </div>
+        <div class="console-item" *ngSwitchCase="'xbox'">
+          <img src="https://img.icons8.com/androidL/512/FFFFFF/xbox.png" alt="Xbox" class="console-logo">
+          <span class="console-name">Xbox</span>
+        </div>
+        <div class="console-item" *ngSwitchCase="'Nintendo'">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/nintendo-logo-black-and-white.png" alt="Nintendo"
+            class="console-logo">
+          <span class="console-name">Nintendo</span>
+        </div>
+      </div>
+      <h2 class="titles">Collection du jeu</h2>
+      <p>{{ game.collection }}</p>
+      <h2 class="titles">Date de sortie du jeu</h2>
+      <p>{{ game.dateDeSortie | date:'dd/MM/yyyy' }}</p>
+      <h2 class="titles">Nombre d'heures jouées</h2>
+      <p>{{ game.heuresDeJeu }} heures jouées</p>
+      <ion-button (click)="deleteGame(game.id)" fill="clear" class="delete-button">
+        <ion-icon name="trash" slot="icon-only" class="deleteIcon"></ion-icon>
+        Supprimer le jeu
+      </ion-button>    
     </ion-card-content>
-  </ion-card>
+  </div>
 </ion-content>

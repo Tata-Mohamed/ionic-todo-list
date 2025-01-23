@@ -6,11 +6,11 @@
           label="Nom du jeu"
           labelPlacement="stacked"
           [clearInput]="true"
-          placeholder="Entrez le nom du jeu">
+          placeholder="Entrez le nom du jeu" required>
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-select [(ngModel)]="newGamePlatform" placeholder="Selectionnez la console">
+        <ion-select [(ngModel)]="newGamePlatform" placeholder="Selectionnez la console" required>
           <div slot="label">Console :</div>
           <ion-select-option value="ps5">PlayStation 5</ion-select-option>
           <ion-select-option value="ps4">PlayStation 4</ion-select-option>
@@ -20,7 +20,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-select [(ngModel)]="newCollectionGames" placeholder="Sélectionnez la collection">
+        <ion-select [(ngModel)]="newCollectionGames" placeholder="Sélectionnez la collection" required>
           <div slot="label">Collection :</div>
           <ion-select-option *ngFor="let collection of collections" [value]="collection.id">
             {{ collection.name }}
@@ -42,7 +42,8 @@
           type="number"
           label="Heures de jeu"
           labelPlacement="stacked"
-          placeholder="Entrez le nombre d'heures de jeu">
+          placeholder="Entrez le nombre d'heures de jeu"
+          required>
         </ion-input>
       </ion-item>
       <ion-item>
@@ -57,6 +58,10 @@
         <ion-button color="success" (click)="takePhoto()">
           <ion-icon name="camera"></ion-icon>
         </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Créé le</ion-label>
+        <ion-input [value]="newGameAddedAt | date:'dd-MM-yyyy, HH:mm:ss'" disabled></ion-input>
       </ion-item>
     </ion-list>
     <div class="btn-add">

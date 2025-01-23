@@ -7,5 +7,4 @@ export interface Collection {
   image?: string;
   games: Game[]; 
   createdAt: Date; 
-  updatedAt: Date;  
 }

@@ -3,6 +3,8 @@ import { Game } from '../models/game.model';
 import { Router } from '@angular/router';
 import { Collection } from '../../collection/models/collection.model';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { GameService } from 'src/app/services/gameService/game.service';
+import { CollectionService } from 'src/app/services/collectionService/collection.service';
 
 @Component({
   selector: 'app-create-game',
@@ -12,19 +14,11 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 export class CreateGamePage {
 
   ngOnInit() {
-    this.getCollections();
+    this.loadCollections();
   }
 
-  // selectedForm: 'collection' | 'game' = 'collection';
-
   collections: Collection[] = [];
-  // newCollectionName: string = '';
-  // newCollectionDescription: string = '';
-  // newCollectionImage: File | null = null;
   newCollectionGames: Game[] = [];
-  // collectionCreatedAt: Date = new Date();
-  // collectionUpdatedAt: Date = new Date();
-
   games: Game[] = [];
   newGameName: string = '';
   newGameDescription: string = '';
@@ -35,7 +29,8 @@ export class CreateGamePage {
   newGameAddedAt: Date = new Date();
   newGameNbHeures?: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private gameService: GameService, private collectionService: CollectionService) {
+  }
 
   onImageChange(event: any) {
     const file = event.target.files[0];
@@ -44,30 +39,9 @@ export class CreateGamePage {
     }
   }
 
-  // addCollection() {
-  //   if (this.newCollectionName.trim().length > 0) {
-  //     const newCollection: Collection = {
-  //       id: Date.now().toString(),
-  //       name: this.newCollectionName.trim(),
-  //       description: this.newCollectionDescription.trim() || undefined,
-  //       image: this.newCollectionImage ? URL.createObjectURL(this.newCollectionImage) : undefined,
-  //       games: this.newCollectionGames,
-  //       createdAt: new Date(),
-  //       updatedAt: new Date(),
-  //     };
-
-  //     const existingCollections = JSON.parse(localStorage.getItem('collections') || '[]');
-  //     existingCollections.push(newCollection);
-  //     localStorage.setItem('collections', JSON.stringify(existingCollections));
-
-  //     this.newCollectionName = '';
-  //     this.newCollectionDescription = '';
-  //     this.newCollectionImage = null;
-  //     this.newCollectionGames = [];
-
-  //     this.router.navigate(['/list-collection']);
-  //   }
-  // }
+  loadCollections() {
+    this.collections = this.collectionService.getCollections();
+  }
 
   addGame() {
       if (this.newGameName.trim().length > 0) {
@@ -82,17 +56,13 @@ export class CreateGamePage {
           dateDeCreation: new Date(),
           heuresDeJeu: this.newGameNbHeures || 0,
         };
+
+        this.gameService.addGame(newGame); 
+        this.router.navigate(['/list-games']);
   
         const existingGames = JSON.parse(localStorage.getItem('games') || '[]');
         existingGames.push(newGame);
         localStorage.setItem('games', JSON.stringify(existingGames));
-  
-        this.newGameName = '';
-        this.newGameDescription = '';
-        this.newGameCoverImage = undefined;
-        this.newGameNbHeures = 0;
-  
-        this.router.navigate(['/list-games']);
       }
     }
 
@@ -121,4 +91,4 @@ export class CreateGamePage {
         console.error('Camera issue:', error);
       }
     }
-}
+  }

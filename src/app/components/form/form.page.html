@@ -13,72 +13,10 @@
 
 <ion-content class="custom-page-background">
 
-  <!-- Création jeu vidéo -->
+  <!-- Création jeu vidéo ou collection -->
+
   <div *ngIf="selectedForm === 'game'" class="form-container">
     <app-create-game></app-create-game>
-    <!-- <ion-list>
-      <ion-item>
-        <ion-input
-          [(ngModel)]="newGameName"
-          label="Nom du jeu"
-          labelPlacement="stacked"
-          [clearInput]="true"
-          placeholder="Entrez le nom du jeu">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-select [(ngModel)]="newGamePlatform" placeholder="Selectionnez la console">
-          <div slot="label">Console :</div>
-          <ion-select-option value="ps5">PlayStation 5</ion-select-option>
-          <ion-select-option value="ps4">PlayStation 4</ion-select-option>
-          <ion-select-option value="xbox">Xbox Series X</ion-select-option>
-          <ion-select-option value="switch">Nintendo Switch</ion-select-option>
-          <ion-select-option value="pc">PC</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-select [(ngModel)]="newCollectionGames" placeholder="Sélectionnez la collection">
-          <div slot="label">Collection :</div>
-          <ion-select-option *ngFor="let collection of collections" [value]="collection.id">
-            {{ collection.name }}
-          </ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          [(ngModel)]="newGameDescription"
-          label="Description"
-          labelPlacement="stacked"
-          [clearInput]="true"
-          placeholder="Entrez une description">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          [(ngModel)]="newGameNbHeures"
-          type="number"
-          label="Heures de jeu"
-          labelPlacement="stacked"
-          placeholder="Entrez le nombre d'heures de jeu">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Date de sortie</ion-label>
-        <ion-datetime 
-          [(ngModel)]="newGameReleaseYear" 
-          displayFormat="DD/MM/YYYY" 
-          placeholder="Sélectionnez la date de sortie"></ion-datetime>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Image du jeu</ion-label>
-        <input type="file" (change)="onImageChange($event)" />
-      </ion-item>
-    </ion-list>
-    <div class="btn-add">
-      <button class="style-button-valid" (click)="addGame()">
-        Valider
-      </button>
-    </div> -->
   </div>
   <div *ngIf="selectedForm === 'collection'" class="form-container">
     <app-create-collection></app-create-collection>

@@ -1,51 +1,25 @@
-<!-- <ion-header>
-    <ion-toolbar>
-      <ion-segment [(ngModel)]="selectedForm" value="collection">
-        <ion-segment-button value="collection">
-          <ion-label>Créer une collection</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="game">
-          <ion-label>Créer un jeu</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-</ion-header> -->
-
-<ion-content class="custom-page-background">
-  <!-- Formulaire de collection -->
-  <!-- <div *ngIf="selectedForm === 'collection'" class="form-container">
-    <ion-list>
-      <ion-item>
-        <ion-input
-        class="form-container"
-          [(ngModel)]="newCollectionName"
-          label="Nom de la collection"
-          labelPlacement="stacked"
-          [clearInput]="true"
-          placeholder="Entrez le nom de la collection">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          [(ngModel)]="newCollectionDescription"
-          label="Description"
-          labelPlacement="stacked"
-          [clearInput]="true"
-          placeholder="Entrez une description">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Image de la collection</ion-label>
-        <input type="file" (change)="onImageChange($event)" />
-      </ion-item>
-    </ion-list>
-    <div class="btn-add">
-      <button class="style-button-valid" (click)="addCollection()">
-        Valider
-      </button>
-    </div>
-  </div> -->
-
-</ion-content>
-
-<p>Create collection</p>
+<ion-list>
+  <ion-item>
+    <ion-input class="form-container" [(ngModel)]="newCollectionName" label="Nom de la collection"
+      labelPlacement="stacked" [clearInput]="true" placeholder="Entrez le nom de la collection" required>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="newCollectionDescription" label="Description" labelPlacement="stacked" [clearInput]="true"
+      placeholder="Entrez une description">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Image de la collection</ion-label>
+    <input type="file" (change)="onImageChange($event)" />
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Créé le</ion-label>
+    <ion-input [value]="collectionCreatedAt | date:'dd-MM-yyyy, HH:mm:ss'" disabled></ion-input>
+  </ion-item>
+</ion-list>
+<div class="btn-add">
+  <button class="style-button-valid" (click)="addCollection()">
+    Valider
+  </button>
+</div>

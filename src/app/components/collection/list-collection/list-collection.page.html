@@ -1,17 +1,26 @@
 <ion-content color="red" class="custom-page-background">
   <ion-list style="background-color: transparent;">
-    <ion-card class="card-item" 
-    *ngFor="let collection of collections"
-    [ngStyle]="{'background-image': collection.image ? 'url(' + collection.image + ')' : 'none', 'background-size': 'cover', 'background-position': 'center'}"
-    >
+    <ion-card class="card-item" *ngFor="let collection of collections"
+      [ngStyle]="{'background-image': collection.image ? 'url(' + collection.image + ')' : 'none', 'background-size': 'cover', 'background-position': 'center'}">
       <ion-card-header>
         <ion-card-title>{{ collection.name }}</ion-card-title>
         <ion-card-subtitle>{{ collection.createdAt | date: 'dd-MM-yyyy' }}</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         {{ collection.description }}
       </ion-card-content>
+
+      <ion-row class="ion-justify-content-between ion-align-items-center">
+        <ion-col size="auto">
+          <ion-button class="buttonGoToDetails" fill="clear">Voir</ion-button>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-button (click)="deleteCollection(collection.id)" fill="clear" class="delete-button">
+            <ion-icon name="trash" slot="icon-only" class="deleteIcon"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </ion-card>
   </ion-list>
 </ion-content>

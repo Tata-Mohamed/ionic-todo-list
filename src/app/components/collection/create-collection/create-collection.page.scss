@@ -1,35 +1,3 @@
-.custom-page-background {
-  --background: #312B4F;
-  color: #ffffff; /* Texte blanc pour un bon contraste */
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-}
-
-.form-container {
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-ion-item {
-  --background: transparent;
-  margin-bottom: 15px;
-}
-
-ion-input {
-  --background: #564F80; /* Une nuance légèrement différente pour les champs */
-  color: #ffffff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-input[type="file"] {
-  color: #ffffff;
-  background-color: #564F80;
-  border-radius: 5px;
-  padding: 8px;
-  margin-top: 8px;
-}
-
 .btn-add {
   display: flex;
   align-items: center;
@@ -37,58 +5,10 @@ input[type="file"] {
 }
 
 .style-button-valid {
-  background-color: #7469b3;
+  background-color: #169041;
   width: 200px;
   height: 60px;
   margin-top: 50px;
   font-size: 20px;
   border-radius: 15px;
 }
-
-ion-card-title, ion-card-subtitle {
-    margin: 0;
-  }
-  
-  .center-icons {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    width: 100%; /* S'assure que l'espace est bien réparti */
-  }
-  
-  ion-button {
-    --padding-start: 10px; /* Ajustez si les icônes sont trop rapprochées */
-    --padding-end: 10px;
-  }
-  .footer {
-    position: relative; /* Nécessaire pour l'effet avec ::before */
-    background: transparent; /* Fond transparent pour appliquer une couche via ::before */
-  }
-  
-  .footer::before {
-    content: ''; /* Nécessaire pour afficher la couche */
-    position: absolute; /* Position relative au footer */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #34315B; /* Couleur de fond */
-    opacity: 0.5; /* Opacité appliquée au fond */
-    z-index: 1; /* Place la couche sous les boutons */
-    pointer-events: none; /* Permet de cliquer sur les boutons */
-  }
-  
-  .center-icons {
-    position: relative; /* Place les icônes au-dessus de la couche */
-    z-index: 2; /* S'assure qu'elles ne sont pas affectées par l'opacité */
-    display: flex;
-    justify-content: space-between; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    width: 100%;
-  }
-  
-  .center-icons ion-icon {
-    color: white; /* Couleur blanche des icônes */
-    font-size: 24px; /* Ajuste la taille des icônes */
-  }
-  

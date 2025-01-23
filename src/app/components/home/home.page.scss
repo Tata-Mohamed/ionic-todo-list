@@ -5,7 +5,6 @@
   height: 100%;
   width: 100%;
   gap: 16px;
-  background-color: #1E193B;
 }
 
 .first-container {
@@ -13,11 +12,15 @@
   text-align: center;
   padding: 20px;
   font-size: 1rem;
-  background-image: url("../../../assets/img/cover-background-artist.gif");
+  background-size: cover; /* Couvre toute la surface sans déformation */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Évite la répétition de l'image */
+  position: relative; /* Pour positionner l'overlay par rapport au conteneur */
+  background-image: url("https://media0.giphy.com/media/3og0IECE72xkgl7XmE/giphy.gif?cid=6c09b952gtchomlsakmggjbbosyugq2m4apgw7cxxuc31c4u&ep=v1_gifs_search&rid=giphy.gif&ct=g");
 }
 
 .container-global {
-  background-color: #312B4F;
+  background-color: #15ff0025;
   border-top-left-radius: 25px 25px;
   border-top-right-radius: 25px 25px;
   height: 100%;
@@ -27,7 +30,7 @@
 }
 
 .second-container {
-  background-color: #454071;
+  background-color: #030303;
   border-radius: 25px;
   width: 97%;
   padding: 10px;
@@ -40,10 +43,9 @@ h2 {
   margin-left: 20px;
 }
 
-/* Style général pour le ion-card */
 #first-card {
   position: relative; /* Permet de positionner la superposition */
-  background-image: url("https://media.gqmagazine.fr/photos/646b7d71a35e700534ed9802/16:9/w_1280,c_limit/100-best-games-hp-b.jpg");
+  background-image: url("https://as2.ftcdn.net/jpg/06/01/21/11/1000_F_601211158_bu0EaLaEqZwLyweHdtsxJf8GfDkMO7hI.jpg");
   background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
   background-position: center; /* Centre l'image */
   border-radius: 8px;
@@ -58,7 +60,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #352f53f0; /* Noircissement semi-transparent */
+  background-color: #000000b2; /* Noircissement semi-transparent */
   z-index: 1; /* Place la couche au-dessus de l'image mais sous le texte */
 }
 
@@ -70,52 +72,3 @@ h2 {
   padding: 16px;
   text-align: center; /* Centre le texte */
 }
-
-ion-card-title, ion-card-subtitle {
-  margin: 0;
-}
-
-.center-icons {
-  display: flex;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-  width: 100%; /* S'assure que l'espace est bien réparti */
-}
-
-ion-button {
-  --padding-start: 10px; /* Ajustez si les icônes sont trop rapprochées */
-  --padding-end: 10px;
-}
-.footer {
-  position: relative; /* Nécessaire pour l'effet avec ::before */
-  background: transparent; /* Fond transparent pour appliquer une couche via ::before */
-}
-
-.footer::before {
-  content: ''; /* Nécessaire pour afficher la couche */
-  position: absolute; /* Position relative au footer */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #34315B; /* Couleur de fond */
-  opacity: 0.5; /* Opacité appliquée au fond */
-  z-index: 1; /* Place la couche sous les boutons */
-  pointer-events: none; /* Permet de cliquer sur les boutons */
-}
-
-.center-icons {
-  position: relative; /* Place les icônes au-dessus de la couche */
-  z-index: 2; /* S'assure qu'elles ne sont pas affectées par l'opacité */
-  display: flex;
-  justify-content: space-between; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-  width: 100%;
-}
-
-.center-icons ion-icon {
-  color: white; /* Couleur blanche des icônes */
-  font-size: 24px; /* Ajuste la taille des icônes */
-}
-
-

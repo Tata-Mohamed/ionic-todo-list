@@ -1,52 +1,39 @@
-  
-  ion-card-title, ion-card-subtitle {
-    margin: 0;
+.card-item {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   
-  .center-icons {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    width: 100%; /* S'assure que l'espace est bien réparti */
+  .buttonGoToDetails {
+    color: rgb(0, 255, 0);
+  }
+  
+  .deleteIcon {
+    font-size: 24px;
+    color: #ff3b30;
+  }
+  
+  ion-card-title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 20px;
+    color: #666;
   }
   
   ion-button {
-    --padding-start: 10px; /* Ajustez si les icônes sont trop rapprochées */
+    --padding-start: 10px;
     --padding-end: 10px;
   }
-  .footer {
-    position: relative; /* Nécessaire pour l'effet avec ::before */
-    background: transparent; /* Fond transparent pour appliquer une couche via ::before */
+  
+  .delete-button {
+    margin-left: auto;
   }
   
-  .footer::before {
-    content: ''; /* Nécessaire pour afficher la couche */
-    position: absolute; /* Position relative au footer */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #34315B; /* Couleur de fond */
-    opacity: 0.5; /* Opacité appliquée au fond */
-    z-index: 1; /* Place la couche sous les boutons */
-    pointer-events: none; /* Permet de cliquer sur les boutons */
-  }
-  
-  .center-icons {
-    position: relative; /* Place les icônes au-dessus de la couche */
-    z-index: 2; /* S'assure qu'elles ne sont pas affectées par l'opacité */
+  ion-col.ion-text-end {
     display: flex;
-    justify-content: space-between; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    width: 100%;
+    justify-content: flex-end;
   }
   
-  .center-icons ion-icon {
-    color: white; /* Couleur blanche des icônes */
-    font-size: 24px; /* Ajuste la taille des icônes */
-  }
-
-  .custom-page-background {
-    background-color: #312B4F; /* Couleur de fond de la page */
-    --background: #312B4F; /* Variable Ionic pour définir le fond */
-  }
