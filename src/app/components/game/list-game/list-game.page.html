@@ -1,5 +1,5 @@
 <ion-content color="red" class="custom-page-background">
-  <ion-list style="background-color: transparent;">
+  <ion-list style="background-color: transparent; margin-bottom: 70px;">
     <ion-card class="card-item" *ngFor="let game of games" (click)="goToDetails(game.id)">
       <img class="image" *ngIf="game.coverImage" [src]="game.coverImage" alt="{{ game.nom }}" />
       

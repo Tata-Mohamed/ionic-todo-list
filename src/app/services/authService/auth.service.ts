@@ -12,9 +12,7 @@ export class AuthService {
   constructor() { }
 
   login(email: string, password: string): boolean {
-    if(
-      email === this.logs.email && password === this.logs.password
-    ){
+    if (email === this.logs.email && password === this.logs.password) {
       localStorage.setItem('user', JSON.stringify({ email }));
       return true;
     }
@@ -24,5 +22,4 @@ export class AuthService {
   logout() {
     localStorage.removeItem('user');
   }
-
 }

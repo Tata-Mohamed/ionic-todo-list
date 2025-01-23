@@ -43,7 +43,7 @@ export class CreateGamePage {
     this.collections = this.collectionService.getCollections();
   }
 
-  addGame() {
+  addGame() { 
       if (this.newGameName.trim().length > 0) {
         const newGame: Game = {
           id: Date.now().toString(),

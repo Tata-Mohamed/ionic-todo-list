@@ -20,7 +20,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-select [(ngModel)]="newCollectionGames" placeholder="Sélectionnez la collection" required>
+        <ion-select [(ngModel)]="newGameGenre" placeholder="Sélectionnez la collection" required>
           <div slot="label">Collection :</div>
           <ion-select-option *ngFor="let collection of collections" [value]="collection.id">
             {{ collection.name }}

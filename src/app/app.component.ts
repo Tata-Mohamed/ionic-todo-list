@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { AuthService } from './services/authService/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,13 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {
-    defineCustomElements(window);
+
+  constructor(public router: Router, private authService: AuthService) {}
+
+  ngOnInit() {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      this.router.navigate(['/login']);
+    }
   }
 }
