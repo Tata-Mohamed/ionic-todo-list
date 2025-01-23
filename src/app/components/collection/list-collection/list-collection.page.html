@@ -13,7 +13,7 @@
 
       <ion-row class="ion-justify-content-between ion-align-items-center">
         <ion-col size="auto">
-          <ion-button class="buttonGoToDetails" fill="clear">Voir</ion-button>
+          <ion-button class="buttonGoToDetails" [routerLink]="['collection-details/', collection.id]" fill="clear">Voir</ion-button>
         </ion-col>
         <ion-col class="ion-text-end">
           <ion-button (click)="deleteCollection(collection.id)" fill="clear" class="delete-button">
