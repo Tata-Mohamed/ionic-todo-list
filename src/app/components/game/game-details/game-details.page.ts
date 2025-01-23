@@ -24,13 +24,16 @@ export class GameDetailsPage implements OnInit {
 
   deleteGame(gameId: string) {
     this.gameService.deleteGame(gameId);
-    this.refreshGames();
+    this.loadGames();
 
     this.router.navigate(['/list-games']);
   }
 
-  private refreshGames() {
-    this.games = this.gameService.getGames();
+  loadGames() {
+    const gamesData = localStorage.getItem('games');
+    if (gamesData) {
+      this.games = JSON.parse(gamesData);
+    }
   }
 
 }

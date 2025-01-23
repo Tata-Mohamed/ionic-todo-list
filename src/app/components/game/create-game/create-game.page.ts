@@ -59,17 +59,7 @@ export class CreateGamePage {
 
         this.gameService.addGame(newGame); 
         this.router.navigate(['/list-games']);
-  
-        const existingGames = JSON.parse(localStorage.getItem('games') || '[]');
-        existingGames.push(newGame);
-        localStorage.setItem('games', JSON.stringify(existingGames));
       }
-    }
-
-    // a placer dans collection.service
-    getCollections() {
-      const existingCollections = JSON.parse(localStorage.getItem('collections') || '[]');
-      this.collections = existingCollections;
     }
 
     async takePhoto(): Promise<any>

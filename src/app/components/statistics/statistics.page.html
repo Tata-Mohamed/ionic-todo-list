@@ -1,13 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>statistics</ion-title>
+    <ion-title>Statistiques</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">statistics</ion-title>
+      <ion-title size="large">Jeux les plus jouées</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let game of topGames">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ game.nom }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Heures jouées: {{ game.heuresDeJeu }} heures</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Jeux les moins joués</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let game of leastPlayedGames">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ game.nom }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Heures jouées: {{ game.heuresDeJeu }} heures</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
