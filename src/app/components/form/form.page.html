@@ -12,15 +12,10 @@
 </ion-header>
 
 <ion-content class="custom-page-background">
-
-  <!-- Création jeu vidéo ou collection -->
-
   <div *ngIf="selectedForm === 'game'" class="form-container">
     <app-create-game></app-create-game>
   </div>
   <div *ngIf="selectedForm === 'collection'" class="form-container">
     <app-create-collection></app-create-collection>
   </div>
-
-
 </ion-content>

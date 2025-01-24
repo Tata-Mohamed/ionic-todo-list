@@ -15,18 +15,27 @@
       <p class="description">{{ game.description }}</p>
       <h2 class="titles">Type de console</h2>
       <div class="align-console-name" [ngSwitch]="game.console">
-        <div class="console-item" *ngSwitchCase="'PlayStation'">
+        <div class="console-item" *ngSwitchCase="'ps5'">
           <img src="https://img.icons8.com/ios11/512/FFFFFF/play-station.png" alt="PlayStation" class="console-logo">
-          <span class="console-name">PlayStation</span>
+          <span class="console-name">PlayStation 5</span>
+        </div>
+        <div class="console-item" *ngSwitchCase="'ps4'">
+          <img src="https://img.icons8.com/ios11/512/FFFFFF/play-station.png" alt="PlayStation" class="console-logo">
+          <span class="console-name">PlayStation 4</span>
         </div>
         <div class="console-item" *ngSwitchCase="'xbox'">
           <img src="https://img.icons8.com/androidL/512/FFFFFF/xbox.png" alt="Xbox" class="console-logo">
-          <span class="console-name">Xbox</span>
+          <span class="console-name">Xbox Series X</span>
         </div>
-        <div class="console-item" *ngSwitchCase="'Nintendo'">
+        <div class="console-item" *ngSwitchCase="'switch'">
           <img src="https://cdn.freebiesupply.com/images/large/2x/nintendo-logo-black-and-white.png" alt="Nintendo"
             class="console-logo">
           <span class="console-name">Nintendo</span>
+        </div>
+        <div class="console-item" *ngSwitchCase="'pc'">
+          <img src="https://static.vecteezy.com/system/resources/previews/020/336/432/non_2x/steam-logo-steam-icon-free-free-vector.jpg" alt="Nintendo"
+            class="console-logo">
+          <span class="console-name">PC</span>
         </div>
       </div>
       <h2 class="titles">Collection du jeu</h2>

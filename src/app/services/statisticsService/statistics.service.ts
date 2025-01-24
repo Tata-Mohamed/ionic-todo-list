@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Game } from '../../components/game/models/game.model';  // Assurez-vous que ce modèle existe dans votre projet
-
+import { Game } from '../../components/game/models/game.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -18,7 +17,7 @@ export class StatisticsService {
   getTopGames(): Game[] {
     const games = this.getGames();
     return games
-      .filter(game => game.heuresDeJeu !== undefined)  // Filtrer les jeux sans heuresDeJeu
+      .filter(game => game.heuresDeJeu !== undefined)
       .sort((a, b) => (b.heuresDeJeu || 0)  - (a.heuresDeJeu || 0))
       .slice(0, 3);
   }

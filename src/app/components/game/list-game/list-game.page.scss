@@ -1,6 +1,6 @@
 ion-list {
-  flex-grow: 1; /* Permet à la liste de s'étendre */
-  overflow-y: auto; /* Active le défilement si nécessaire */
+  flex-grow: 1;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
 }
@@ -8,8 +8,8 @@ ion-list {
 ion-content {
   --background: transparent;
   height: 100%;
-  overflow-y: auto; /* Active le défilement vertical */
-  scroll-padding-bottom: 50px; /* Ajoute de l'espace en bas pour le contenu */
+  overflow-y: auto;
+  scroll-padding-bottom: 50px;
 }
 
 .custom-page-background {

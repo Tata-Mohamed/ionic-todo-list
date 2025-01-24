@@ -111,7 +111,21 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss", 
+            "src/theme/variables.scss",
+            "src/app/components/collection/collection-details/collection-details.page.scss",
+            "src/app/components/collection/create-collection/create-collection.page.scss",
+            "src/app/components/collection/create-collection/create-collection.page.scss",
+            "src/app/components/collection/list-collection/list-collection.page.scss",
+            "src/app/components/form/form.page.scss",
+            "src/app/components/game/create-game/create-game.page.scss",
+            "src/app/components/game/list-game/list-game.page.scss",
+            "src/app/components/game/game-details/game-details.page.scss",
+            "src/app/components/home/home.page.scss",
+            "src/app/components/login/login.page.scss",
+            "src/app/components/statistics/statistics.page.scss",
+            "src/app/shared/statistics/footer/footer.component.scss"
+          ],
             "scripts": []
           },
           "configurations": {
